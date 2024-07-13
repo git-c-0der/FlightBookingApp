@@ -15,9 +15,9 @@ const setupAndStartServer = async () => {
     app.listen(PORT, async () => {
         console.log(`Server started at port ${PORT}`);
         // Should be used only once as it is a heavy operation to sync the db.
-        // if(process.env.SYNC_DB) {
-        //     db.sequelize.sync({alter:true});
-        // }
+        if(process.env.SYNC_DB) {
+            db.sequelize.sync({alter:true});
+        }
         // console.log(process.env);
 
         // const city = await City.findOne({
