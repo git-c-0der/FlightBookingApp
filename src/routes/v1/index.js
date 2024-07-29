@@ -18,6 +18,7 @@ router.post('/flights',
     FlightMiddlewares.validateCreateFlight,
     FlightController.create);
 router.get('/flights', FlightController.getAll);
+router.get('/flights/:flightId', FlightController.get);
 
 router.post('/airports', AirportController.create);
 
